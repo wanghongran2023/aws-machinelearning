@@ -22,6 +22,10 @@ All the code and screenshots are stored in the **code** and **Training and Deplo
 | Training and deployment/s3.png | screenshot for s3 |
 | Training and deployment/nodebook.png | screenshot for nodebook instance |
 
+# Multi-thread training on AWS EC2
+
+This section demonstrates how to train the model on an EC2 instance. Unlike SageMaker training jobs, training on EC2 requires more consideration when selecting the instance type. Since CNNs are compute-intensive, CPU performance is more critical than memory or storage.
+For this reason, I chose a compute-optimized EC2 instance (cX family). Given that the image dataset is relatively small, a 2-core CPU with a high clock speed should be sufficient to complete the training within a reasonable timeframe. Therefore, I selected the c3.xlarge instance type for EC2 training, balancing cost and performance effectively.
 
 
 
