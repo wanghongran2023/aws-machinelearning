@@ -29,7 +29,17 @@ For this reason, I chose a compute-optimized EC2 instance (cX family). Given tha
 
 The SageMaker and EC2 training scripts have similar training logic, but they are designed for different environments, so they work differently.
 The SageMaker script uses special features from SageMaker, like built-in libraries, debugging tools, and performance tracking. However, SageMaker has some limits. It manages many settings automatically, so the code must follow certain rules, making it less flexible than EC2 training.
-On the other hand, EC2 training is more flexible because you control everything. You can choose any tools, libraries, and settings. However, you need to set up debugging and monitoring yourself, which can take extra effort.
+On the other hand, EC2 training is more flexible because you control everything. You can choose any tools, libraries, and settings. However, you need to set up debugging and monitoring yourself, which can take extra effort.<br/><br/>
+
+All the code and screenshots are stored in the **code** and **EC2 Training** folders, and the descriptions are as follows:
+
+| File Name | Description |
+| --------- | ----------- |
+| code/ec2train1.py | python file for training in EC2 |
+| EC2 Training/ec2-training.png | screenshot for ec2 type and training |
+
+# Lambda function setup
+
 
 
 
