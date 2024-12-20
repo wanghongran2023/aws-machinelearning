@@ -27,8 +27,9 @@ All the code and screenshots are stored in the **code** and **Training and Deplo
 This section demonstrates how to train the model on an EC2 instance. Unlike SageMaker training jobs, training on EC2 requires more consideration when selecting the instance type. Since CNNs are compute-intensive, CPU performance is more critical than memory or storage.
 For this reason, I chose a compute-optimized EC2 instance (cX family). Given that the image dataset is relatively small, a 2-core CPU should be sufficient to complete the training within a reasonable timeframe. Therefore, I selected the c3.large instance type for EC2 training, balancing cost and performance effectively.
 
-As for the comparision between code of sagemaker training and ec2 training, 
-
+The SageMaker and EC2 training scripts have similar training logic, but they are designed for different environments, so they work differently.
+The SageMaker script uses special features from SageMaker, like built-in libraries, debugging tools, and performance tracking. However, SageMaker has some limits. It manages many settings automatically, so the code must follow certain rules, making it less flexible than EC2 training.
+On the other hand, EC2 training is more flexible because you control everything. You can choose any tools, libraries, and settings. However, you need to set up debugging and monitoring yourself, which can take extra effort.
 
 
 
