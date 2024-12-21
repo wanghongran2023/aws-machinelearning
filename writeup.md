@@ -31,7 +31,7 @@ The SageMaker and EC2 training scripts have similar training logic, but they are
 The SageMaker script uses special features from SageMaker, like built-in libraries, debugging tools, and performance tracking. However, SageMaker has some limits. It manages many settings automatically, so the code must follow certain rules, making it less flexible than EC2 training.
 On the other hand, EC2 training is more flexible because you control everything. You can choose any tools, libraries, and settings. However, you need to set up debugging and monitoring yourself, which can take extra effort.<br/><br/>
 
-All the code and screenshots are stored in the **code** and **EC2 Training** folders, and the descriptions are as follows:
+All the code and screenshots are stored in the `**code**` and **EC2 Training** folders, and the descriptions are as follows:
 
 | File Name | Description |
 | --------- | ----------- |
@@ -39,6 +39,8 @@ All the code and screenshots are stored in the **code** and **EC2 Training** fol
 | EC2 Training/ec2-training.png | screenshot for ec2 type and training |
 
 # Lambda function setup
+
+In this section, we deploy a Lambda function to perform image classification using a SageMaker inference endpoint. It first retrieves the image URL from the incoming event payload. If the URL is missing, it raises a `ValueError`. The function then creates a request payload containing the image URL and sends it to the SageMaker endpoint using the `invoke_endpoint` method. The response from the endpoint is read, decoded, and parsed as JSON. If the inference is successful, the function returns the prediction results with a 200 status code and proper headers for content type and CORS support. If an error occurs at any point, the function logs the error and returns a 500 status code with the error message in the response body.
 
 
 
