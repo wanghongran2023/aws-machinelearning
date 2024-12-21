@@ -58,5 +58,24 @@ All the code and screenshots are stored in the `code` and `EC2 Training` folders
 
 # Lambda concurrency and endpoint auto-scaling
 
+This section demonstrates Lambda concurrency and endpoint auto-scaling.
+For the Lambda function:
 
+ - **Reserved concurrency**: I set the reserved concurrency to 100 to ensure the function can handle up to 100 concurrent executions without being throttled. This ensures the function has sufficient capacity allocated to meet expected demand.
+ - **Provisioned concurrency**: I also set the provisioned concurrency to 80 to guarantee that 80 slots of the function are always initialized and ready to respond instantly. This is particularly important for reducing cold start latency, ensuring critical workloads or time-sensitive tasks perform efficiently.
+ - **Unused capacity**: I left 20 slots unused to allow for flexibility in handling occasional spikes in traffic or to accommodate other Lambda functions running in the same account.
 
+For the SageMaker endpoint:
+ - **Auto-scaling configuration**: I set up auto-scaling with a maximum instance count of 2 to balance cost and performance. This means that the system can scale out to an additional instance if traffic exceeds the capacity of a single instance.
+ - **Scaling trigger**: The scaling is triggered when the number of requests reaches 50.
+   
+By implementing these configurations, the system can handle varying workloads efficiently, maintaining reliability and minimizing unnecessary costs.
+
+All the screenshots are stored in the `Concurrency and auto-scaling` folders, and the descriptions are as follows:
+
+| File Name | Description |
+| --------- | ----------- |
+| Concurrency and auto-scaling/endpoint-autoscaling.py	| Screenshot for the endpoint autoscaling | 
+| Concurrency and auto-scaling/endpoint-autoscaling.png	| Screenshot of the endpoint autoscaling | 
+| Concurrency and auto-scaling/lambda-concurrency.png	| Screenshot of the Lambda concurrecny setting| 
+| Concurrency and auto-scaling/lambda-version.png	| Screenshot of the Lambda version | 
