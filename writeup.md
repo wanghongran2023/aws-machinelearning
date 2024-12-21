@@ -49,14 +49,14 @@ I found some security problems on my IAM page. In the past, I created roles with
 All the code and screenshots are stored in the `code` and `EC2 Training` folders, and the descriptions are as follows:
 
 
-# Lambda concurrency and endpoint auto-scaling
-
 | File Name | Description |
 | --------- | ----------- |
 | code/lambdafunction.py	| Python file for the Lambda function | 
 | Lambda function setup/lambda-full-access-policy.png	| Screenshot of the Lambda function with SageMaker full access | 
 | Lambda function setup/lambda-limited-access-policy.png	| Screenshot of the Lambda function with SageMaker limited access| 
 | Lambda function setup/lambda.png	| Screenshot of the Lambda function successfully executed | 
+
+# Lambda concurrency and endpoint auto-scaling
 
 
 
